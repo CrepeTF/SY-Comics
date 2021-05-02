@@ -26,6 +26,8 @@ import com.bluelinelabs.conductor.Router
 import com.bluelinelabs.conductor.RouterTransaction
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.behavior.HideBottomViewOnScrollBehavior
+import com.google.android.material.bottomnavigation.LabelVisibilityMode.LABEL_VISIBILITY_LABELED
+import com.google.android.material.bottomnavigation.LabelVisibilityMode.LABEL_VISIBILITY_SELECTED
 import dev.chrisbanes.insetter.applyInsetter
 import eu.kanade.tachiyomi.R
 import eu.kanade.tachiyomi.data.notification.NotificationReceiver
@@ -137,6 +139,15 @@ class MainActivity : BaseViewBindingActivity<MainActivityBinding>() {
                 padding()
             }
         }
+
+        // Option to hide and show bottom_nav labels
+        // Takoyomi -->
+        if (preferences.labelVisibility().get()) {
+            binding.bottomNav.labelVisibilityMode = LABEL_VISIBILITY_SELECTED
+        } else {
+            binding.bottomNav.labelVisibilityMode = LABEL_VISIBILITY_LABELED
+        }
+        // Takoyomi <--
 
         // Make sure navigation bar is on bottom before we modify it
         ViewCompat.setOnApplyWindowInsetsListener(binding.root) { _, insets ->

@@ -276,8 +276,8 @@ class SettingsGeneralController : SettingsController() {
 
             switchPreference {
                 key = Keys.labelVisibility
-                titleRes = R.string.pref_hide_labels
-                summaryRes = R.string.pref_hide_labels_summary
+                titleRes = R.string.pref_nav_label_visibility
+                summaryRes = R.string.pref_nav_label_visibility_summary
                 defaultValue = false
             }
 
