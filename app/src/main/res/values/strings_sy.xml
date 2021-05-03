@@ -683,4 +683,7 @@
     </plurals>
     <string name="humanize_fallback">moments ago</string>
 
+    <!-- Miscellaneous -->
+    <string name="search_">Search %1$s</string>
+
 </resources>

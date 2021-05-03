@@ -69,6 +69,7 @@ class LibraryController(
     RootController,
     TabbedController,
     ActionMode.Callback,
+    MainActivity.FloatingSearchInterface,
     ChangeMangaCategoriesDialog.Listener,
     DeleteLibraryMangasDialog.Listener {
 
@@ -161,8 +162,13 @@ class LibraryController(
             }
         }
 
+    // Takoyomi -->
+
+    // Takoyomi <--
+
     override fun getTitle(): String? {
         return currentTitle ?: resources?.getString(R.string.label_library)
+        return searchTitle(view?.context?.getString(R.string.label_library))
     }
 
     private fun updateTitle() {
