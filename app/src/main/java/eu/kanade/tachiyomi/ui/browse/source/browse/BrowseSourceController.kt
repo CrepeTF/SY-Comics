@@ -401,7 +401,7 @@ open class BrowseSourceController(bundle: Bundle) :
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        createOptionsMenu(menu, inflater, R.menu.source_browse, R.id.action_search)
+        createOptionsMenu(menu, inflater, R.menu.source_browse_floating, R.id.action_search)
         val searchItem = menu.findItem(R.id.action_search)
 
         searchItem.fixExpand(
