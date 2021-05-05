@@ -77,6 +77,7 @@ open class BrowseSourceController(bundle: Bundle) :
     FlexibleAdapter.OnItemClickListener,
     FlexibleAdapter.OnItemLongClickListener,
     FlexibleAdapter.EndlessScrollListener,
+    MainActivity.FloatingSearchInterface,
     ChangeMangaCategoriesDialog.Listener {
 
     constructor(
@@ -146,7 +147,7 @@ open class BrowseSourceController(bundle: Bundle) :
     }
 
     override fun getTitle(): String? {
-        return presenter.source.name
+        return searchTitle(presenter.source.name)
     }
 
     override fun createPresenter(): BrowseSourcePresenter {
