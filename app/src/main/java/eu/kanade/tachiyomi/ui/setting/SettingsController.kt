@@ -22,6 +22,7 @@ import eu.kanade.tachiyomi.R
 import eu.kanade.tachiyomi.data.preference.PreferencesHelper
 import eu.kanade.tachiyomi.ui.base.controller.BaseController
 import eu.kanade.tachiyomi.ui.base.controller.RootController
+import eu.kanade.tachiyomi.ui.main.MainActivity
 import eu.kanade.tachiyomi.util.system.getResourceColor
 import kotlinx.coroutines.MainScope
 import uy.kohesive.injekt.Injekt
@@ -106,6 +107,9 @@ abstract class SettingsController : PreferenceController() {
     }
 
     open fun getTitle(): String? {
+        if (this is MainActivity.FloatingSearchInterface) {
+            return searchTitle(preferenceScreen?.title?.toString())
+        }
         return preferenceScreen?.title?.toString()
     }
 
