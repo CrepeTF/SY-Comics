@@ -24,7 +24,7 @@
         android:icon="@drawable/ic_refresh_24dp"
         android:title="@string/action_update_library"
         app:iconTint="?attr/colorOnPrimary"
-        app:showAsAction="ifRoom" />
+        app:showAsAction="never" />
 
     <item
         android:id="@+id/action_sync_favorites"
